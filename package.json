@@ -4,9 +4,12 @@
   "description": "Body signal analyser",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src index.js -s",
+    "build": "npm run clean && npm run build-babel",
     "test": "test",
     "dev": "nodemon --exec babel-node index.js",
-    "start": "babel-node index.js"
+    "start": "npm run build && node ./build/index.js"
   },
   "author": "",
   "license": "ISC",
