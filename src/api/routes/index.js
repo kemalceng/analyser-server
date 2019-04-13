@@ -1,12 +1,12 @@
 import { createAnalysis, updateAnalysis, stopAnalysis } from '../controllers';
 
 export default function (app) {
-  app.route('/analyses')
+  app.route('/records')
     .post(createAnalysis);
 
-  app.route('/analyses/:analysisId')
+  app.route('/records/:recordId')
     .put(updateAnalysis);
 
-  app.route('/analyses/:analysisId/stop')
+  app.route('/records/:recordId/stop')
     .put(stopAnalysis);
 }
